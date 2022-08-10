@@ -11,10 +11,10 @@ app.config.PROXIES_COUNT = 1
 app.config.REAL_IP_HEADER = 'x-real-ip'
 # nest_asyncio.apply()
 
-# @app.route("/")
-# async def getIndex(request):
-#   print(request.ip)
-#   return  json_(dict(status=200))
+@app.route("/")
+async def getIndex(request):
+  print(request.ip)
+  return  json_(dict(status=200))
 
 # 用户被t下线展示的网页。
 @app.route("/notifylogout")
@@ -35,6 +35,6 @@ async def test(request):
 
 
 if __name__ == '__main__':
-  app.run('0.0.0.0',18000)
+  app.run('0.0.0.0',443)
 
 
